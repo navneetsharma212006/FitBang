@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #94a3b8;
+    color: #000000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-white to-[#94a3b8] text-black font-semibold px-8 py-3 rounded-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#94a3b8]/20 hover:scale-[1.02] active:scale-95 tracking-wide uppercase text-sm;
+  }
+
+  .btn-outline {
+    @apply border border-white text-white font-semibold px-8 py-3 rounded-sm transition-all duration-300 hover:bg-white hover:text-black active:scale-95 tracking-wide uppercase text-sm;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-16;
+  }
+
+  .card-glass {
+    @apply bg-[#111111] border border-[#222222] rounded-sm transition-all duration-300 hover:border-[#94a3b8]/40;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white to-[#94a3b8] bg-clip-text text-transparent;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium tracking-widest uppercase text-gray-400 hover:text-white transition-colors duration-300 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-[#94a3b8] transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-white;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 40px rgba(148, 163, 184, 0.15);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 30px rgba(148, 163, 184, 0.1);
+  }
+
+  .divider {
+    @apply w-12 h-[2px] bg-gradient-to-r from-white to-[#94a3b8] mx-auto my-4;
+  }
+
+  .divider-left {
+    @apply w-12 h-[2px] bg-gradient-to-r from-white to-[#94a3b8] my-4;
+  }
+}
